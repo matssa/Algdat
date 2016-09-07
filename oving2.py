@@ -9,19 +9,39 @@ class Node:
         self.barn = {}
         self.posi = []
 
+def printTree(node, thisKey):
+    print(thisKey, end=' ')
+    print(node.posi)
+    for key in node.barn:
+        printTree(node.barn[key], key)
+
+def buildTree(node, word):
+    letter = word[0]
+    word = word[1:]
+    if not letter in node.barn:
+        node.barn[letter] = Node()
+    if not word:
+        return node.barn[letter]
+    return buildTree(node.barn[letter], word)
 
 def bygg(ordliste):
     toppNode = Node()
-    return byggTre(toppNode, ordliste)
-
-def byggTre(topp, ordliste):
-
-    print(ordliste)                         #må bort etterpaa
-
+    for tuppel in ordliste:
+        endNode = buildTree(toppNode, tuppel[0])
+        endNode.posi.append(tuppel[1])
+    printTree(toppNode, 'toppNode')
+    return toppNode
 
 def posisjoner(ord, indeks, node):
-    x = 0
+    for letter in ord:
+        if letter in node.barn:
+            node = node.barn[letter]
+        if letter == '?':
+            for unge in node.barn:
+                if ord[indeks] == 
 
+        indeks +=1
+    return node.posi
 
 def main():
     try:
