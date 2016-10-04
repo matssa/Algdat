@@ -5,10 +5,8 @@ from operator import itemgetter
 from collections import defaultdict
 
 
-def flexradix(A, d):
-    # Du mÃ¥ mest sannsynlig lage egne hjelpefunksjoner for denne funksjonen for Ã¥ lÃ¸se oppgaven.
-    # Funksjonen skal returnere listen A sortert.
-    # SKRIV DIN KODE HER
+def flexradix(A, d):    # d = antall strenger
+    # idé: hva med å dele opp strengene etter lengde for å samle de av lik lengde og merge sammen etterpå? Hmm, får kanskje kjøretid på Ø(n log n)...
 
 
 def main():
