@@ -1,17 +1,18 @@
-#!/usr/bin/python3
+#!/usr/bin/python3                              #husk å endre dette etterpå!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-from sys import stdin
+
+#from sys import stdin                          #husk å endre dette etterpå!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 def max_value(widths, heights, values, paper_width, paper_height):
-    # SKRIV DIN KODE HER
+    return 0
 
 
 def main():
-    widths = []
-    heights = []
-    values = []
-    for triple in stdin.readline().split():
+    f = open('input7.txt', 'r')
+    widths, heights, values = [], [], []
+    sedler = []
+    for triple in f.readline().split():
         dim_value = triple.split(':', 1)
         dim = dim_value[0].split('x', 1)
         width = int(dim[0][1:])
@@ -20,10 +21,19 @@ def main():
         widths.append(int(width))
         heights.append(int(height))
         values.append(int(value))
-    for line in stdin:
-        paper_width, paper_height = [int(x) for x in line.split('x', 1)]
-        print((max_value(widths, heights, values, paper_width, paper_height)))
+        for 
 
+    print(widths, heights, values)
+
+    for line in f:
+        #for line in stdin:
+        x = 0
+        print((max_value(0, 0, 0, 0, 0)))
+
+
+
+
+    f.close()                                   #fjern!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 if __name__ == "__main__":
     main()
