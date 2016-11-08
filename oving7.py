@@ -21,7 +21,7 @@ def main():
         widths.append(int(width))
         heights.append(int(height))
         values.append(int(value))
-        for 
+
 
     print(widths, heights, values)
 
