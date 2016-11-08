@@ -1,22 +1,18 @@
 from sys import stdin
-
 Inf = float('inf')
-
 
 def mst(nm):
     mintre = prim(nm)
-    summ = 0
+    sum = 0
     for (fra, til) in mintre:
-        print('hei')
-        summ = max(summ, nm[fra][til])
-    return summ
+        sum = max(sum, nm[fra][til])
+    return sum
 
 def prim(nm):
-    n = len(nm)
     tre = []
-    bestenabo = [None] * n
-    bestepris = [Inf] * n
-    ikke_funnet = range(1, n)
+    bestenabo = [None] * len(nm)
+    bestepris = [Inf] * len(nm)
+    ikke_funnet = list(range(1, len(nm)))
     forrige = 0
     while len(ikke_funnet) > 0:
         for i in ikke_funnet:
@@ -29,7 +25,7 @@ def prim(nm):
                 nestefra = i
                 nestetil = bestenabo[i]
                 minpris = bestepris[i]
-        tre.append( (nestefra,nestetil) )
+        tre.append((nestefra, nestetil))
         ikke_funnet.remove(nestefra)
         forrige = nestefra
     return tre
@@ -38,7 +34,6 @@ lines = []
 for str in stdin:
     lines.append(str)
 n = len(lines)
-print('bo')
 neighbour_matrix = [None] * n
 node = 0
 for line in lines:
